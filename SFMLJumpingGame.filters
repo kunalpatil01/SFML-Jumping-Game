@@ -1,0 +1,256 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="sfml_intro.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="..\..\..\SFML_Download\lib\flac - Copy.lib">
+      <Filter>Source Files</Filter>
+    </Library>
+    <Library Include="..\..\..\SFML_Download\lib\flac.lib">
+      <Filter>Source Files</Filter>
+    </Library>
+    <Library Include="..\..\..\SFML_Download\lib\freetype - Copy.lib">
+      <Filter>Source Files</Filter>
+    </Library>
+    <Library Include="..\..\..\SFML_Download\lib\freetype.lib">
+      <Filter>Source Files</Filter>
+    </Library>
+    <Library Include="..\..\..\SFML_Download\lib\ogg - Copy.lib">
+      <Filter>Source Files</Filter>
+    </Library>
+    <Library Include="..\..\..\SFML_Download\lib\ogg.lib">
+      <Filter>Source Files</Filter>
+    </Library>
+    <Library Include="..\..\..\SFML_Download\lib\openal32 - Copy.lib">
+      <Filter>Source Files</Filter>
+    </Library>
+    <Library Include="..\..\..\SFML_Download\lib\openal32.lib">
+      <Filter>Source Files</Filter>
+    </Library>
+    <Library Include="..\..\..\SFML_Download\lib\sfml-audio - Copy.lib">
+      <Filter>Source Files</Filter>
+    </Library>
+    <Library Include="..\..\..\SFML_Download\lib\sfml-audio.lib">
+      <Filter>Source Files</Filter>
+    </Library>
+    <Library Include="..\..\..\SFML_Download\lib\sfml-audio-d - Copy.lib">
+      <Filter>Source Files</Filter>
+    </Library>
+    <Library Include="..\..\..\SFML_Download\lib\sfml-audio-d.lib">
+      <Filter>Source Files</Filter>
+    </Library>
+    <Library Include="..\..\..\SFML_Download\lib\sfml-audio-s - Copy.lib">
+      <Filter>Source Files</Filter>
+    </Library>
+    <Library Include="..\..\..\SFML_Download\lib\sfml-audio-s.lib">
+      <Filter>Source Files</Filter>
+    </Library>
+    <Library Include="..\..\..\SFML_Download\lib\sfml-audio-s-d - Copy.lib">
+      <Filter>Source Files</Filter>
+    </Library>
+    <Library Include="..\..\..\SFML_Download\lib\sfml-audio-s-d.lib">
+      <Filter>Source Files</Filter>
+    </Library>
+    <Library Include="..\..\..\SFML_Download\lib\sfml-graphics - Copy.lib">
+      <Filter>Source Files</Filter>
+    </Library>
+    <Library Include="..\..\..\SFML_Download\lib\sfml-graphics.lib">
+      <Filter>Source Files</Filter>
+    </Library>
+    <Library Include="..\..\..\SFML_Download\lib\sfml-graphics-d - Copy.lib">
+      <Filter>Source Files</Filter>
+    </Library>
+    <Library Include="..\..\..\SFML_Download\lib\sfml-graphics-d.lib">
+      <Filter>Source Files</Filter>
+    </Library>
+    <Library Include="..\..\..\SFML_Download\lib\sfml-graphics-s - Copy.lib">
+      <Filter>Source Files</Filter>
+    </Library>
+    <Library Include="..\..\..\SFML_Download\lib\sfml-graphics-s.lib">
+      <Filter>Source Files</Filter>
+    </Library>
+    <Library Include="..\..\..\SFML_Download\lib\sfml-graphics-s-d - Copy.lib">
+      <Filter>Source Files</Filter>
+    </Library>
+    <Library Include="..\..\..\SFML_Download\lib\sfml-graphics-s-d.lib">
+      <Filter>Source Files</Filter>
+    </Library>
+    <Library Include="..\..\..\SFML_Download\lib\sfml-main - Copy.lib">
+      <Filter>Source Files</Filter>
+    </Library>
+    <Library Include="..\..\..\SFML_Download\lib\sfml-main.lib">
+      <Filter>Source Files</Filter>
+    </Library>
+    <Library Include="..\..\..\SFML_Download\lib\sfml-main-d - Copy.lib">
+      <Filter>Source Files</Filter>
+    </Library>
+    <Library Include="..\..\..\SFML_Download\lib\sfml-main-d.lib">
+      <Filter>Source Files</Filter>
+    </Library>
+    <Library Include="..\..\..\SFML_Download\lib\sfml-network - Copy.lib">
+      <Filter>Source Files</Filter>
+    </Library>
+    <Library Include="..\..\..\SFML_Download\lib\sfml-network.lib">
+      <Filter>Source Files</Filter>
+    </Library>
+    <Library Include="..\..\..\SFML_Download\lib\sfml-network-d - Copy.lib">
+      <Filter>Source Files</Filter>
+    </Library>
+    <Library Include="..\..\..\SFML_Download\lib\sfml-network-d.lib">
+      <Filter>Source Files</Filter>
+    </Library>
+    <Library Include="..\..\..\SFML_Download\lib\sfml-network-s - Copy.lib">
+      <Filter>Source Files</Filter>
+    </Library>
+    <Library Include="..\..\..\SFML_Download\lib\sfml-network-s.lib">
+      <Filter>Source Files</Filter>
+    </Library>
+    <Library Include="..\..\..\SFML_Download\lib\sfml-network-s-d - Copy.lib">
+      <Filter>Source Files</Filter>
+    </Library>
+    <Library Include="..\..\..\SFML_Download\lib\sfml-network-s-d.lib">
+      <Filter>Source Files</Filter>
+    </Library>
+    <Library Include="..\..\..\SFML_Download\lib\sfml-system - Copy.lib">
+      <Filter>Source Files</Filter>
+    </Library>
+    <Library Include="..\..\..\SFML_Download\lib\sfml-system.lib">
+      <Filter>Source Files</Filter>
+    </Library>
+    <Library Include="..\..\..\SFML_Download\lib\sfml-system-d - Copy.lib">
+      <Filter>Source Files</Filter>
+    </Library>
+    <Library Include="..\..\..\SFML_Download\lib\sfml-system-d.lib">
+      <Filter>Source Files</Filter>
+    </Library>
+    <Library Include="..\..\..\SFML_Download\lib\sfml-system-s - Copy.lib">
+      <Filter>Source Files</Filter>
+    </Library>
+    <Library Include="..\..\..\SFML_Download\lib\sfml-system-s.lib">
+      <Filter>Source Files</Filter>
+    </Library>
+    <Library Include="..\..\..\SFML_Download\lib\sfml-system-s-d - Copy.lib">
+      <Filter>Source Files</Filter>
+    </Library>
+    <Library Include="..\..\..\SFML_Download\lib\sfml-system-s-d.lib">
+      <Filter>Source Files</Filter>
+    </Library>
+    <Library Include="..\..\..\SFML_Download\lib\sfml-window - Copy.lib">
+      <Filter>Source Files</Filter>
+    </Library>
+    <Library Include="..\..\..\SFML_Download\lib\sfml-window.lib">
+      <Filter>Source Files</Filter>
+    </Library>
+    <Library Include="..\..\..\SFML_Download\lib\sfml-window-d - Copy.lib">
+      <Filter>Source Files</Filter>
+    </Library>
+    <Library Include="..\..\..\SFML_Download\lib\sfml-window-d.lib">
+      <Filter>Source Files</Filter>
+    </Library>
+    <Library Include="..\..\..\SFML_Download\lib\sfml-window-s - Copy.lib">
+      <Filter>Source Files</Filter>
+    </Library>
+    <Library Include="..\..\..\SFML_Download\lib\sfml-window-s.lib">
+      <Filter>Source Files</Filter>
+    </Library>
+    <Library Include="..\..\..\SFML_Download\lib\sfml-window-s-d.lib">
+      <Filter>Source Files</Filter>
+    </Library>
+    <Library Include="..\..\..\SFML_Download\lib\vorbis.lib">
+      <Filter>Source Files</Filter>
+    </Library>
+    <Library Include="..\..\..\SFML_Download\lib\vorbisenc.lib">
+      <Filter>Source Files</Filter>
+    </Library>
+    <Library Include="..\..\..\SFML_Download\lib\vorbisfile.lib">
+      <Filter>Source Files</Filter>
+    </Library>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\SFML_Download\lib\sfml-audio-d - Copy.pdb">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="..\..\..\SFML_Download\lib\sfml-audio-d.pdb">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="..\..\..\SFML_Download\lib\sfml-audio-s-d - Copy.pdb">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="..\..\..\SFML_Download\lib\sfml-audio-s-d.pdb">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="..\..\..\SFML_Download\lib\sfml-graphics-d - Copy.pdb">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="..\..\..\SFML_Download\lib\sfml-graphics-d.pdb">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="..\..\..\SFML_Download\lib\sfml-graphics-s-d - Copy.pdb">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="..\..\..\SFML_Download\lib\sfml-graphics-s-d.pdb">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="..\..\..\SFML_Download\lib\sfml-main-s-d - Copy.pdb">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="..\..\..\SFML_Download\lib\sfml-main-s-d.pdb">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="..\..\..\SFML_Download\lib\sfml-network-d - Copy.pdb">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="..\..\..\SFML_Download\lib\sfml-network-d.pdb">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="..\..\..\SFML_Download\lib\sfml-network-s-d - Copy.pdb">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="..\..\..\SFML_Download\lib\sfml-network-s-d.pdb">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="..\..\..\SFML_Download\lib\sfml-system-d - Copy.pdb">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="..\..\..\SFML_Download\lib\sfml-system-d.pdb">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="..\..\..\SFML_Download\lib\sfml-system-s-d - Copy.pdb">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="..\..\..\SFML_Download\lib\sfml-system-s-d.pdb">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="..\..\..\SFML_Download\lib\sfml-window-d - Copy.pdb">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="..\..\..\SFML_Download\lib\sfml-window-d.pdb">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="..\..\..\SFML_Download\lib\sfml-window-s-d.pdb">
+      <Filter>Source Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="comic.ttf">
+      <Filter>Source Files</Filter>
+    </Font>
+  </ItemGroup>
+</Project>
