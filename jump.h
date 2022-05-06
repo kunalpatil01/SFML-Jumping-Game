@@ -2,6 +2,7 @@
 #define _JUMP_
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
+#include <queue>
 
 
 /**
@@ -59,8 +60,9 @@ private:
 	sf::Clock last_jump; //clock to keep track of time since the last jump
 	sf::RectangleShape top; //square part of the character
 	sf::RectangleShape bottom; //rectangle part of the character
-	sf::Sound hit; //sound to make when hit
-	sf::Sound jump; //sound to make when jump
+	sf::Sound hit_sound; //sound to make when hit
+	sf::Sound jump_sound; //sound to make when jump
+	int lives; //number of lives that the character has
 
 public:
 
@@ -69,10 +71,50 @@ public:
 	*/
 	character(); 
 
+	/**
+	accessor function to find the smallest y value of character 
+	@return the minimum y value of the bottom part 
+	*/
+	float get_y_min() const;
+
+	/**
+	accessor function to find the greatest x value of character
+	@return max y value of character
+	*/
+	float get_x_max() const;
+
+	/**
+	function that will display the character
+	@param window the render window to display the top and bottom part of the characetr on
+	*/
+	void display( sf::RenderWindow& window) const;
+
+	/**
+	member function to make the character jump
+	*/
+	void jump();
+
+	/**
+	member function to check if character is alive
+	@return true if character is alive, false if not
+	*/
+	bool alive() const;
+
+	/**
+	function to check if character is currently touching an enemy 
+	@param Enemy the specific enemy that we're checking for hit 
+	@return true if so, false if not 
+	*/
+	bool hit_by(enemy& Enemy);
 
 
 };
 
+class Game {
 
+private:
+	character _character;
+	std::queue<enemy> enemies;
+};
 
 #endif

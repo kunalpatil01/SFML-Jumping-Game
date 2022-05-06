@@ -33,7 +33,7 @@ float enemy::get_y_max() const {
 	return origin.y;
 }
 
-character::character() : init_pos(0.f, float(150-150/6)), last_jump(), top(), bottom() { //construct the init post to be x position of 0 and y position to be window height minus ground height, default construct last jump, top and bottom
+character::character() : init_pos(0.f, float(150-150/6)), last_jump(), top(), bottom(), lives(3) { //construct the init post to be x position of 0 and y position to be window height minus ground height, default construct last jump, top and bottom
 
 
 	//set the correct properties of the shapes
@@ -58,14 +58,98 @@ character::character() : init_pos(0.f, float(150-150/6)), last_jump(), top(), bo
 	if (!hit_buffer.loadFromFile("Resources/hit.wav")) {//if we are unable to load the sound file, throw an error
 		throw std::logic_error("Could not open file hit.wav");
 	}
-	hit = sf::Sound(hit_buffer);
+	hit_sound = sf::Sound(hit_buffer);
 
 	sf::SoundBuffer jump_buffer;
 	if (!jump_buffer.loadFromFile("Resources/jump.wav")) {//if we are unable to load the sound file, throw an error
 		throw std::logic_error("Could not open file jump.wav");
 	}
-	jump = sf::Sound(jump_buffer); 
+
+	jump_sound = sf::Sound(jump_buffer); 
 }
+
+float character::get_y_min() const {
+
+	constexpr float square_length = 150 / 6;
+	float time = last_jump.getElapsedTime().asSeconds();
+	float jump_height;
+
+	if (time <= T1) { //if the time since the last jump is under 1 second, then the character is in motion so use the formula to find jump height
+		jump_height = (8 * (square_length) * time * (T1 - time)) / (T1 * T1);
+	}
+	else { //otherwise, the character is not in motion so jump height is 0 
+		jump_height = 0;
+	}
+
+	const sf::Vector2f origin = bottom.getOrigin(); 
+
+	return origin.y +square_length - jump_height; //return the origin of y plus square length, minus the jump height 
+	
+
+}
+
+float character::get_x_max() const {
+
+	constexpr float square_length = 150 / 6; // square length is one sixth of the window height
+	constexpr float rectangle_length = square_length * 3; // rectangle length is three times the square length
+
+	return rectangle_length;
+
+}
+
+void character::display(sf::RenderWindow& window) const {
+
+	//draw the top and bottom
+	window.draw(top);
+	window.draw(bottom);
+
+}
+
+void character::jump() {
+
+	float time = last_jump.getElapsedTime().asSeconds();
+
+	if (time <= T2) { //if time is less than t2, we can't jump so do nothing
+		return;
+	}
+	else { // otherwise restart the clock
+		jump_sound.play(); 
+		last_jump.restart(); 
+	}
+
+}
+
+bool character::alive() const {
+
+	if (lives == 0) { //if we have 0 lives, then return false
+		return false;
+	}
+	else {//otherwise return true
+		return true;
+	}
+
+}
+
+bool character::hit_by(enemy& Enemy) {
+
+	if ((Enemy.get_y_max() <= get_y_min()) || (Enemy.get_x_min() >= get_x_max())) { // if the y or x values of enemy and character are intersecting  
+
+		hit_sound.play(); //play hit sound
+		lives--; // decrement lives
+		return true; 
+
+	}
+	else { //otherwise, return false
+		return false;
+	}
+
+}
+
+
+
+
+
+
 
 
 

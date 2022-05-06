@@ -17,7 +17,20 @@ int main() {
 	sf::RectangleShape ground;
 	ground.setSize(sf::Vector2f(window_length, ground_height));
 	ground.setFillColor(sf::Color::White);
-	ground.setPosition(sf::Vector2f(0, ground_height));
+	ground.setPosition(sf::Vector2f(0, window_height-ground_height));
+
+	//initialize the instructional text 
+	sf::Text instructions;
+	instructions.setCharacterSize(20);
+
+	sf::Font font; 
+	if(!font.loadFromFile("Resources/sansation.ttf")) { //if we couldn't open the font file, throw an error
+		throw std::logic_error("Could not find font sansation.ttf");
+	}
+	instructions.setPosition(0, 0);
+	instructions.setString("Press any key to begin.\nPress Up to jump.\nGet hit 3 times and lose.");
+	instructions.setFillColor(sf::Color::White);
+	instructions.setFont(font); //set the font 
 
 	while (window.isOpen()) {
 
@@ -30,9 +43,7 @@ int main() {
 
 		window.clear(sf::Color::Black); //clear the window and fill the background with black
 		window.draw(ground);
-
-	
-
+		window.draw(instructions);
 		window.display();//finally, display the window
 	}
 	return 0;
