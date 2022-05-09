@@ -145,13 +145,14 @@ bool character::hit_by(enemy& Enemy) {
 
 }
 
-///////////////GAME class definitions
+}
+
 
 void Game::do_removals()
 {
 	bool was_hit = _character->hit_by(*enemies.front());
 	//checks if the player is hit by the frontmost enemy or if the enemy is out of bounds
-	if (was_hit || enemies.front()->get_x_min() < (0 - square_length))
+	if (was_hit ||	enemies.front()->get_x_min() < (0 - square_length))	
 	{
 		delete enemies.front();	//delete enemy and shift queue forwards
 		enemies.pop_back();
@@ -163,7 +164,7 @@ void Game::move_enemies()
 {
 	for (auto it : enemies)
 	{
-		it->update_position({ it->getPosition().x - 1, it->getPosition().y });	//move the enemy to the left
+		it->update_position({it->getPosition().x -1, it->getPosition().y});	//move the enemy to the left
 	}
 }
 void Game::make_enemies()
@@ -173,7 +174,7 @@ void Game::make_enemies()
 	if (time.asSeconds() >= 1.5)	//if more than 1.5 seconds have elapsed, we generate a new enemy with probability 50%
 	{
 		int val = rand();
-
+		
 		//uncomment the next line will cause the game program to not compile as enemy is an abc
 		//if (val % 2 == 0) { enemies.push_back(new enemy); }	//note: enemy is pure virtual, we need to override some functions
 
@@ -192,7 +193,7 @@ void Game::manage_events(sf::Event e)
 	}
 }
 
-Game::Game() : score(0)
+Game::Game(): score(0)
 {
 	_character = new character;
 }

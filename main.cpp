@@ -42,7 +42,11 @@ int main() {
 			else if (event.type == sf::Event::KeyPressed)
 			{
 				if (start == false) { start = true; }
+<<<<<<< HEAD
 				else
+=======
+				else 
+>>>>>>> d4abe0069a5c585231d5bbfbc0736b7d585fa0bf
 				{
 					game.manage_events(event);
 					//game.step();
@@ -59,7 +63,11 @@ int main() {
 
 		window.clear(sf::Color::Black); //clear the window and fill the background with black
 		window.draw(ground);
+<<<<<<< HEAD
 		(start) ? (game.display(window)) : (window.draw(instructions));
+=======
+		(start) ? (game.display(window)):(window.draw(instructions));
+>>>>>>> d4abe0069a5c585231d5bbfbc0736b7d585fa0bf
 		window.display();//finally, display the window
 		int x = 0;
 	}

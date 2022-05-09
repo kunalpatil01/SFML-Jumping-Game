@@ -143,7 +143,11 @@ private:
 	void move_character();
 
 	/**
+<<<<<<< HEAD
 	Creates enemies
+=======
+	Creates enemies 
+>>>>>>> d4abe0069a5c585231d5bbfbc0736b7d585fa0bf
 	*/
 	void make_enemies();
 
@@ -182,7 +186,11 @@ public:
 	Getter for the score of the game
 	@return The score of the game
 	*/
+<<<<<<< HEAD
 	unsigned int get_score() const;
+=======
+	unsigned int get_score() const;	
+>>>>>>> d4abe0069a5c585231d5bbfbc0736b7d585fa0bf
 
 };
 
