@@ -1,12 +1,12 @@
 ﻿  jump.cpp
-C:\Users\patil\source\repos\SFML Intro Project\jump.h(65,33): warning C4305: 'initializing': truncation from 'double' to 'const float'
+C:\Users\patil\source\repos\SFML Intro Project\jump.h(78,33): warning C4305: 'initializing': truncation from 'double' to 'const float'
   main.cpp
-C:\Users\patil\source\repos\SFML Intro Project\jump.h(65,33): warning C4305: 'initializing': truncation from 'double' to 'const float'
+C:\Users\patil\source\repos\SFML Intro Project\jump.h(78,33): warning C4305: 'initializing': truncation from 'double' to 'const float'
 C:\Users\patil\source\repos\SFML Intro Project\main.cpp(11,55): warning C4244: 'argument': conversion from 'const float' to 'unsigned int', possible loss of data
 C:\Users\patil\source\repos\SFML Intro Project\main.cpp(11,40): warning C4244: 'argument': conversion from 'const float' to 'unsigned int', possible loss of data
   Generating code
-  8 of 138 functions ( 5.8%) were compiled, the rest were copied from previous compilation.
+  0 of 138 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    4 functions had inline decision re-evaluated but remain unchanged
+    0 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   SFML Intro Project.vcxproj -> C:\Users\patil\source\repos\SFML Intro Project\Release\SFML Intro Project.exe
