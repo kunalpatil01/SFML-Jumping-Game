@@ -50,6 +50,19 @@ public:
 	*/
 	float get_y_max() const;
 
+	/**
+	function to get the number of points in the enemy class
+	@return number of vertices of the rectange
+	*/
+	size_t getPointCount() const;
+
+	/**
+	function to return the coordinates of a given vertex
+	@param index specify the vertex number that you want the coordiantes of 
+	@return coordinates of that index
+	*/
+	sf::Vector2f getPoint(size_t index) const;
+
 };
 
 
@@ -142,13 +155,8 @@ private:
 	*/
 	void move_character();
 
-	/**
-<<<<<<< HEAD
-	Creates enemies
-=======
-	Creates enemies 
->>>>>>> d4abe0069a5c585231d5bbfbc0736b7d585fa0bf
-	*/
+
+	
 	void make_enemies();
 
 
@@ -186,12 +194,7 @@ public:
 	Getter for the score of the game
 	@return The score of the game
 	*/
-<<<<<<< HEAD
 	unsigned int get_score() const;
-=======
-	unsigned int get_score() const;	
->>>>>>> d4abe0069a5c585231d5bbfbc0736b7d585fa0bf
-
 };
 
 #endif

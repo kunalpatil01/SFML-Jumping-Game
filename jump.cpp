@@ -33,6 +33,15 @@ float enemy::get_y_max() const {
 	return origin.y;
 }
 
+size_t enemy::getPointCount() const {
+	return body.getPointCount(); 
+}
+
+sf::Vector2f enemy::getPoint(size_t index) const {
+	return body.getPoint(index);
+}
+
+
 character::character() : init_pos(0.f, float(150 - 150 / 6)), last_jump(), top(), bottom(), lives(3) { //construct the init post to be x position of 0 and y position to be window height minus ground height, default construct last jump, top and bottom
 
 
@@ -145,7 +154,7 @@ bool character::hit_by(enemy& Enemy) {
 
 }
 
-}
+
 
 
 void Game::do_removals()

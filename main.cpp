@@ -39,37 +39,20 @@ int main() {
 			if (event.type == sf::Event::Closed) { // if the event is that the user wants to close the display
 				window.close(); //close the window
 			}
-			else if (event.type == sf::Event::KeyPressed)
-			{
-				if (start == false) { start = true; }
-<<<<<<< HEAD
-				else
-=======
-				else 
->>>>>>> d4abe0069a5c585231d5bbfbc0736b7d585fa0bf
-				{
-					game.manage_events(event);
-					//game.step();
-					//game.display(window);
+			//game.step();
+			//game.display(window);
 
-				}
 			}
-
-
-		}
 
 		//game.step();
 
 
 		window.clear(sf::Color::Black); //clear the window and fill the background with black
 		window.draw(ground);
-<<<<<<< HEAD
-		(start) ? (game.display(window)) : (window.draw(instructions));
-=======
-		(start) ? (game.display(window)):(window.draw(instructions));
->>>>>>> d4abe0069a5c585231d5bbfbc0736b7d585fa0bf
-		window.display();//finally, display the window
-		int x = 0;
+	
+
+			window.display();//finally, display the window
+	
 	}
 	return 0;
 
