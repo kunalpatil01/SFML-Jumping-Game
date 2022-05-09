@@ -132,7 +132,7 @@ bool character::alive() const {
 
 bool character::hit_by(enemy& Enemy) {
 
-	if ((Enemy.get_y_max() <= get_y_min()) || (Enemy.get_x_min() >= get_x_max())) { // if the y or x values of enemy and character are intersecting  
+	if ((Enemy.get_y_max() <= get_y_min()) && (Enemy.get_x_min() >= get_x_max())) { // if the y or x values of enemy and character are intersecting  
 
 		hit_sound.play(); //play hit sound
 		lives--; // decrement lives
@@ -145,13 +145,85 @@ bool character::hit_by(enemy& Enemy) {
 
 }
 
+///////////////GAME class definitions
 
+void Game::do_removals()
+{
+	bool was_hit = _character->hit_by(*enemies.front());
+	//checks if the player is hit by the frontmost enemy or if the enemy is out of bounds
+	if (was_hit ||	enemies.front()->get_x_min() < (0 - square_length))	
+	{
+		delete enemies.front();	//delete enemy and shift queue forwards
+		enemies.pop_back();
+	}
 
+	if (!was_hit) { ++score; }	//if the player was not hit by the enemy then increase the score by one
+}
+void Game::move_enemies()
+{
+	for (auto it : enemies)
+	{
+		it->update_position({it->getPosition().x -1, it->getPosition().y});	//move the enemy to the left
+	}
+}
+void Game::make_enemies()
+{
+	sf::Time time = timer.getElapsedTime();	//we get the time
 
+	if (time.asSeconds() >= 1.5)	//if more than 1.5 seconds have elapsed, we generate a new enemy with probability 50%
+	{
+		int val = rand();
+		
+		//uncomment the next line will cause the game program to not compile as enemy is an abc
+		//if (val % 2 == 0) { enemies.push_back(new enemy); }	//note: enemy is pure virtual, we need to override some functions
 
+		timer.restart();	//restart the timer
+	}
+}
 
+void Game::manage_events(sf::Event e)
+{
+	if (e.type == sf::Event::KeyPressed)
+	{
+		if (e.key.code == sf::Keyboard::Up)
+		{
+			_character->jump();
+		}
+	}
+}
 
+Game::Game(): score(0)
+{
+	_character = new character;
+}
 
+Game::~Game()
+{
+	delete _character;
+	_character = nullptr;
 
+	for (auto it : enemies)
+	{
+		if (it != nullptr)
+		{
+			delete it;
+			it = nullptr;
+		}
+	}
+}
 
+void Game::display(sf::RenderWindow& window) const
+{
+	_character->display(window);
 
+	for (auto it : enemies)
+	{
+		//Uncomment the next line when enemy::display(sf::RenderWindow& window) const; is declared and defined
+		//it->display(window);
+	}
+}
+
+unsigned int Game::get_score() const
+{
+	return score;
+}
