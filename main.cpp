@@ -29,9 +29,8 @@ int main() {
 	instructions.setFillColor(sf::Color::White);
 	instructions.setFont(font); //set the font 
 
-	bool start = false;
-
-	Game game;
+	bool start = false;	//this starts the game once a key is pressed
+	Game game;	//initialize the game object
 	while (window.isOpen()) {
 
 		sf::Event event; //initialize an event to track user inputs
