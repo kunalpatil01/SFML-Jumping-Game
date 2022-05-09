@@ -3,12 +3,20 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
 #include <queue>
+#include <random>
+
+
+constexpr float window_height = 150; // set the height of the window to be displayed
+constexpr float window_length = 450;//set the length of the window to be displayed
+constexpr float ground_height = window_height / 6; // ground height is one sixth of the window height
+constexpr float square_length = window_height / 6;
+constexpr float player_width = 3 * square_length;
 
 
 /**
 @class enemy represents the blocks that come at the player in the game
 */
-class enemy : public sf::Shape{
+class enemy : public sf::Shape {
 
 private:
 
@@ -20,9 +28,9 @@ private:
 public:
 
 	/**
-	default constructor for enemy 
+	default constructor for enemy
 	*/
-	enemy(); 
+	enemy();
 
 	/**
 	simple function to update the position of the enemy to be called upon by Game
@@ -64,16 +72,17 @@ private:
 	sf::Sound jump_sound; //sound to make when jump
 	int lives; //number of lives that the character has
 
+	void update_path();
 public:
 
 	/**
 	default constructor for character class
 	*/
-	character(); 
+	character();
 
 	/**
-	accessor function to find the smallest y value of character 
-	@return the minimum y value of the bottom part 
+	accessor function to find the smallest y value of character
+	@return the minimum y value of the bottom part
 	*/
 	float get_y_min() const;
 
@@ -87,7 +96,7 @@ public:
 	function that will display the character
 	@param window the render window to display the top and bottom part of the characetr on
 	*/
-	void display( sf::RenderWindow& window) const;
+	void display(sf::RenderWindow& window) const;
 
 	/**
 	member function to make the character jump
@@ -101,9 +110,9 @@ public:
 	bool alive() const;
 
 	/**
-	function to check if character is currently touching an enemy 
-	@param Enemy the specific enemy that we're checking for hit 
-	@return true if so, false if not 
+	function to check if character is currently touching an enemy
+	@param Enemy the specific enemy that we're checking for hit
+	@return true if so, false if not
 	*/
 	bool hit_by(enemy& Enemy);
 
@@ -113,8 +122,68 @@ public:
 class Game {
 
 private:
-	character _character;
-	std::queue<enemy> enemies;
+	character* _character;	//member variables are pointer to character and enemy classes
+	std::deque<enemy*> enemies;
+	unsigned int score;
+	sf::Clock timer;
+
+	/**
+	Function that handles the removal of enemy objects by checking if the object is either touching the player or out of range
+	*/
+	void do_removals();
+
+	/**
+	Moves each enemy left by one point
+	*/
+	void move_enemies();
+
+	/**
+	Moves character (not defined yet; would require some information from character class regarding time since last jump)
+	*/
+	void move_character();
+
+	/**
+	Creates enemies
+	*/
+	void make_enemies();
+
+
+
+public:
+
+	/**
+	Default constructor for Game
+	*/
+	Game();
+
+	/**
+	Destructor for game to free dynamically allocated memory
+	*/
+	~Game();
+
+	/**
+	This function will be called in each iteration of the while-loop in int main and will orchestrate most of the
+	events in the game
+	*/
+	void step();	//function that orchestrates one "frame" of the game
+
+	/**
+	For now this just manages the case of the player pressing the jump button
+	*/
+	void manage_events(sf::Event e);
+
+	/**
+	Function that calls display on all enemies and characters
+	@param sf::RenderWindow& window The window object to display in
+	*/
+	void display(sf::RenderWindow& window) const;
+
+	/**
+	Getter for the score of the game
+	@return The score of the game
+	*/
+	unsigned int get_score() const;
+
 };
 
 #endif
