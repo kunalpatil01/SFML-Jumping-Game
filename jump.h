@@ -2,7 +2,7 @@
 #define _JUMP_
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
-#include <queue>
+#include <deque>
 #include <random>
 
 
@@ -36,7 +36,7 @@ public:
 	simple function to update the position of the enemy to be called upon by Game
 	@param pos the new position of enemy
 	*/
-	void update_position(sf::Vector2f pos);
+	void update_position();
 
 	/**
 	simple function to find the leftmost position of the enemy
@@ -62,6 +62,8 @@ public:
 	@return coordinates of that index
 	*/
 	sf::Vector2f getPoint(size_t index) const;
+
+	void display(sf::RenderWindow& window) const;
 
 };
 
@@ -156,7 +158,9 @@ private:
 	void move_character();
 
 
-	
+	/**
+	Makes enemies and adds them to the deque of enemies.
+	*/
 	void make_enemies();
 
 

@@ -88,7 +88,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\patil\SFML_Download\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\fateh\Desktop\University docs\Spring 2022\PIC 10C\SFML stuff\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp14</LanguageStandard>
     </ClCompile>
     <Link>
@@ -146,89 +146,54 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <Library Include="..\..\..\SFML_Download\lib\flac - Copy.lib" />
-    <Library Include="..\..\..\SFML_Download\lib\flac.lib" />
-    <Library Include="..\..\..\SFML_Download\lib\freetype - Copy.lib" />
-    <Library Include="..\..\..\SFML_Download\lib\freetype.lib" />
-    <Library Include="..\..\..\SFML_Download\lib\ogg - Copy.lib" />
-    <Library Include="..\..\..\SFML_Download\lib\ogg.lib" />
-    <Library Include="..\..\..\SFML_Download\lib\openal32 - Copy.lib" />
-    <Library Include="..\..\..\SFML_Download\lib\openal32.lib" />
-    <Library Include="..\..\..\SFML_Download\lib\sfml-audio - Copy.lib" />
-    <Library Include="..\..\..\SFML_Download\lib\sfml-audio-d - Copy.lib" />
-    <Library Include="..\..\..\SFML_Download\lib\sfml-audio-d.lib" />
-    <Library Include="..\..\..\SFML_Download\lib\sfml-audio-s - Copy.lib" />
-    <Library Include="..\..\..\SFML_Download\lib\sfml-audio-s-d - Copy.lib" />
-    <Library Include="..\..\..\SFML_Download\lib\sfml-audio-s-d.lib" />
-    <Library Include="..\..\..\SFML_Download\lib\sfml-audio-s.lib" />
-    <Library Include="..\..\..\SFML_Download\lib\sfml-audio.lib" />
-    <Library Include="..\..\..\SFML_Download\lib\sfml-graphics - Copy.lib" />
-    <Library Include="..\..\..\SFML_Download\lib\sfml-graphics-d - Copy.lib" />
-    <Library Include="..\..\..\SFML_Download\lib\sfml-graphics-d.lib" />
-    <Library Include="..\..\..\SFML_Download\lib\sfml-graphics-s - Copy.lib" />
-    <Library Include="..\..\..\SFML_Download\lib\sfml-graphics-s-d - Copy.lib" />
-    <Library Include="..\..\..\SFML_Download\lib\sfml-graphics-s-d.lib" />
-    <Library Include="..\..\..\SFML_Download\lib\sfml-graphics-s.lib" />
-    <Library Include="..\..\..\SFML_Download\lib\sfml-graphics.lib" />
-    <Library Include="..\..\..\SFML_Download\lib\sfml-main - Copy.lib" />
-    <Library Include="..\..\..\SFML_Download\lib\sfml-main-d - Copy.lib" />
-    <Library Include="..\..\..\SFML_Download\lib\sfml-main-d.lib" />
-    <Library Include="..\..\..\SFML_Download\lib\sfml-main.lib" />
-    <Library Include="..\..\..\SFML_Download\lib\sfml-network - Copy.lib" />
-    <Library Include="..\..\..\SFML_Download\lib\sfml-network-d - Copy.lib" />
-    <Library Include="..\..\..\SFML_Download\lib\sfml-network-d.lib" />
-    <Library Include="..\..\..\SFML_Download\lib\sfml-network-s - Copy.lib" />
-    <Library Include="..\..\..\SFML_Download\lib\sfml-network-s-d - Copy.lib" />
-    <Library Include="..\..\..\SFML_Download\lib\sfml-network-s-d.lib" />
-    <Library Include="..\..\..\SFML_Download\lib\sfml-network-s.lib" />
-    <Library Include="..\..\..\SFML_Download\lib\sfml-network.lib" />
-    <Library Include="..\..\..\SFML_Download\lib\sfml-system - Copy.lib" />
-    <Library Include="..\..\..\SFML_Download\lib\sfml-system-d - Copy.lib" />
-    <Library Include="..\..\..\SFML_Download\lib\sfml-system-d.lib" />
-    <Library Include="..\..\..\SFML_Download\lib\sfml-system-s - Copy.lib" />
-    <Library Include="..\..\..\SFML_Download\lib\sfml-system-s-d - Copy.lib" />
-    <Library Include="..\..\..\SFML_Download\lib\sfml-system-s-d.lib" />
-    <Library Include="..\..\..\SFML_Download\lib\sfml-system-s.lib" />
-    <Library Include="..\..\..\SFML_Download\lib\sfml-system.lib" />
-    <Library Include="..\..\..\SFML_Download\lib\sfml-window - Copy.lib" />
-    <Library Include="..\..\..\SFML_Download\lib\sfml-window-d - Copy.lib" />
-    <Library Include="..\..\..\SFML_Download\lib\sfml-window-d.lib" />
-    <Library Include="..\..\..\SFML_Download\lib\sfml-window-s - Copy.lib" />
-    <Library Include="..\..\..\SFML_Download\lib\sfml-window-s-d.lib" />
-    <Library Include="..\..\..\SFML_Download\lib\sfml-window-s.lib" />
-    <Library Include="..\..\..\SFML_Download\lib\sfml-window.lib" />
-    <Library Include="..\..\..\SFML_Download\lib\vorbis.lib" />
-    <Library Include="..\..\..\SFML_Download\lib\vorbisenc.lib" />
-    <Library Include="..\..\..\SFML_Download\lib\vorbisfile.lib" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="..\..\..\SFML_Download\lib\sfml-audio-d - Copy.pdb" />
-    <None Include="..\..\..\SFML_Download\lib\sfml-audio-d.pdb" />
-    <None Include="..\..\..\SFML_Download\lib\sfml-audio-s-d - Copy.pdb" />
-    <None Include="..\..\..\SFML_Download\lib\sfml-audio-s-d.pdb" />
-    <None Include="..\..\..\SFML_Download\lib\sfml-graphics-d - Copy.pdb" />
-    <None Include="..\..\..\SFML_Download\lib\sfml-graphics-d.pdb" />
-    <None Include="..\..\..\SFML_Download\lib\sfml-graphics-s-d - Copy.pdb" />
-    <None Include="..\..\..\SFML_Download\lib\sfml-graphics-s-d.pdb" />
-    <None Include="..\..\..\SFML_Download\lib\sfml-main-s-d - Copy.pdb" />
-    <None Include="..\..\..\SFML_Download\lib\sfml-main-s-d.pdb" />
-    <None Include="..\..\..\SFML_Download\lib\sfml-network-d - Copy.pdb" />
-    <None Include="..\..\..\SFML_Download\lib\sfml-network-d.pdb" />
-    <None Include="..\..\..\SFML_Download\lib\sfml-network-s-d - Copy.pdb" />
-    <None Include="..\..\..\SFML_Download\lib\sfml-network-s-d.pdb" />
-    <None Include="..\..\..\SFML_Download\lib\sfml-system-d - Copy.pdb" />
-    <None Include="..\..\..\SFML_Download\lib\sfml-system-d.pdb" />
-    <None Include="..\..\..\SFML_Download\lib\sfml-system-s-d - Copy.pdb" />
-    <None Include="..\..\..\SFML_Download\lib\sfml-system-s-d.pdb" />
-    <None Include="..\..\..\SFML_Download\lib\sfml-window-d - Copy.pdb" />
-    <None Include="..\..\..\SFML_Download\lib\sfml-window-d.pdb" />
-    <None Include="..\..\..\SFML_Download\lib\sfml-window-s-d.pdb" />
-  </ItemGroup>
-  <ItemGroup>
     <Font Include="comic.ttf" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="jump.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="..\..\..\Desktop\University docs\Spring 2022\PIC 10C\SFML stuff\lib\flac.lib" />
+    <Library Include="..\..\..\Desktop\University docs\Spring 2022\PIC 10C\SFML stuff\lib\freetype.lib" />
+    <Library Include="..\..\..\Desktop\University docs\Spring 2022\PIC 10C\SFML stuff\lib\ogg.lib" />
+    <Library Include="..\..\..\Desktop\University docs\Spring 2022\PIC 10C\SFML stuff\lib\openal32.lib" />
+    <Library Include="..\..\..\Desktop\University docs\Spring 2022\PIC 10C\SFML stuff\lib\sfml-audio-d.lib" />
+    <Library Include="..\..\..\Desktop\University docs\Spring 2022\PIC 10C\SFML stuff\lib\sfml-audio-s-d.lib" />
+    <Library Include="..\..\..\Desktop\University docs\Spring 2022\PIC 10C\SFML stuff\lib\sfml-audio-s.lib" />
+    <Library Include="..\..\..\Desktop\University docs\Spring 2022\PIC 10C\SFML stuff\lib\sfml-audio.lib" />
+    <Library Include="..\..\..\Desktop\University docs\Spring 2022\PIC 10C\SFML stuff\lib\sfml-graphics-d.lib" />
+    <Library Include="..\..\..\Desktop\University docs\Spring 2022\PIC 10C\SFML stuff\lib\sfml-graphics-s-d.lib" />
+    <Library Include="..\..\..\Desktop\University docs\Spring 2022\PIC 10C\SFML stuff\lib\sfml-graphics-s.lib" />
+    <Library Include="..\..\..\Desktop\University docs\Spring 2022\PIC 10C\SFML stuff\lib\sfml-graphics.lib" />
+    <Library Include="..\..\..\Desktop\University docs\Spring 2022\PIC 10C\SFML stuff\lib\sfml-main-d.lib" />
+    <Library Include="..\..\..\Desktop\University docs\Spring 2022\PIC 10C\SFML stuff\lib\sfml-main.lib" />
+    <Library Include="..\..\..\Desktop\University docs\Spring 2022\PIC 10C\SFML stuff\lib\sfml-network-d.lib" />
+    <Library Include="..\..\..\Desktop\University docs\Spring 2022\PIC 10C\SFML stuff\lib\sfml-network-s-d.lib" />
+    <Library Include="..\..\..\Desktop\University docs\Spring 2022\PIC 10C\SFML stuff\lib\sfml-network-s.lib" />
+    <Library Include="..\..\..\Desktop\University docs\Spring 2022\PIC 10C\SFML stuff\lib\sfml-network.lib" />
+    <Library Include="..\..\..\Desktop\University docs\Spring 2022\PIC 10C\SFML stuff\lib\sfml-system-d.lib" />
+    <Library Include="..\..\..\Desktop\University docs\Spring 2022\PIC 10C\SFML stuff\lib\sfml-system-s-d.lib" />
+    <Library Include="..\..\..\Desktop\University docs\Spring 2022\PIC 10C\SFML stuff\lib\sfml-system-s.lib" />
+    <Library Include="..\..\..\Desktop\University docs\Spring 2022\PIC 10C\SFML stuff\lib\sfml-system.lib" />
+    <Library Include="..\..\..\Desktop\University docs\Spring 2022\PIC 10C\SFML stuff\lib\sfml-window-d.lib" />
+    <Library Include="..\..\..\Desktop\University docs\Spring 2022\PIC 10C\SFML stuff\lib\sfml-window-s-d.lib" />
+    <Library Include="..\..\..\Desktop\University docs\Spring 2022\PIC 10C\SFML stuff\lib\sfml-window-s.lib" />
+    <Library Include="..\..\..\Desktop\University docs\Spring 2022\PIC 10C\SFML stuff\lib\sfml-window.lib" />
+    <Library Include="..\..\..\Desktop\University docs\Spring 2022\PIC 10C\SFML stuff\lib\vorbis.lib" />
+    <Library Include="..\..\..\Desktop\University docs\Spring 2022\PIC 10C\SFML stuff\lib\vorbisenc.lib" />
+    <Library Include="..\..\..\Desktop\University docs\Spring 2022\PIC 10C\SFML stuff\lib\vorbisfile.lib" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\Desktop\University docs\Spring 2022\PIC 10C\SFML stuff\lib\sfml-audio-d.pdb" />
+    <None Include="..\..\..\Desktop\University docs\Spring 2022\PIC 10C\SFML stuff\lib\sfml-audio-s-d.pdb" />
+    <None Include="..\..\..\Desktop\University docs\Spring 2022\PIC 10C\SFML stuff\lib\sfml-graphics-d.pdb" />
+    <None Include="..\..\..\Desktop\University docs\Spring 2022\PIC 10C\SFML stuff\lib\sfml-graphics-s-d.pdb" />
+    <None Include="..\..\..\Desktop\University docs\Spring 2022\PIC 10C\SFML stuff\lib\sfml-main-s-d.pdb" />
+    <None Include="..\..\..\Desktop\University docs\Spring 2022\PIC 10C\SFML stuff\lib\sfml-network-d.pdb" />
+    <None Include="..\..\..\Desktop\University docs\Spring 2022\PIC 10C\SFML stuff\lib\sfml-network-s-d.pdb" />
+    <None Include="..\..\..\Desktop\University docs\Spring 2022\PIC 10C\SFML stuff\lib\sfml-system-d.pdb" />
+    <None Include="..\..\..\Desktop\University docs\Spring 2022\PIC 10C\SFML stuff\lib\sfml-system-s-d.pdb" />
+    <None Include="..\..\..\Desktop\University docs\Spring 2022\PIC 10C\SFML stuff\lib\sfml-window-d.pdb" />
+    <None Include="..\..\..\Desktop\University docs\Spring 2022\PIC 10C\SFML stuff\lib\sfml-window-s-d.pdb" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
