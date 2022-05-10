@@ -31,27 +31,43 @@ int main() {
 
 	bool start = false;	//this starts the game once a key is pressed
 	Game game;	//initialize the game object
+	enemy x;
 	while (window.isOpen()) {
 
 		sf::Event event; //initialize an event to track user inputs
-		while (window.pollEvent(event)) { //poll the event
+		while (window.pollEvent(event))
+		{ //poll the event
 
 			if (event.type == sf::Event::Closed) { // if the event is that the user wants to close the display
 				window.close(); //close the window
 			}
-			//game.step();
-			//game.display(window);
+			else if (event.type == sf::Event::KeyPressed)
+			{
+				if (start == false) { start = true; }
+				else
+				{
+					game.manage_events(event);
+					//game.step();
+					//game.display(window);
 
+				}
 			}
-
-		//game.step();
+		}
+		game.step();
 
 
 		window.clear(sf::Color::Black); //clear the window and fill the background with black
 		window.draw(ground);
+		
+		if (start)	//if the game has started then we display the game
+		{
+			game.display(window);
+			//game.step();
+		}
+		else { window.draw(instructions); }	//otherwise show instructions
 	
-
-			window.display();//finally, display the window
+		x.display(window);
+		window.display();//finally, display the window
 	
 	}
 	return 0;

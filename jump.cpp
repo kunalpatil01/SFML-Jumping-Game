@@ -12,25 +12,37 @@ enemy::enemy() : clock(), body() { //first default construct clock and body
 
 	//x position is the length of the window (450)
 	//y position twice the height of the square
-	body.setPosition(sf::Vector2f(450, 2 * side_length)); //set the position to be the rightmost of the screen, lying on the ground
+	body.setPosition(sf::Vector2f(450, float(150 - 2*150 / 6))); //set the position to be the rightmost of the screen, lying on the ground
 }
 
-void enemy::update_position(sf::Vector2f pos) {
-	body.setPosition(pos);
+void enemy::update_position() {
+	if (clock.getElapsedTime().asMilliseconds() >= 10)
+	{
+		auto t = clock.getElapsedTime().asMilliseconds();
+		body.setPosition(static_cast<float>(body.getPosition().x - 2), body.getPosition().y);
+		clock.restart();
+	}
 }
 
 float enemy::get_x_min() const {
 
-	//get the origin of the body (top left corner) and return the x part
+	/*
+		//get the origin of the body (top left corner) and return the x part
 	const sf::Vector2f origin = body.getOrigin();
 	return origin.x;
+	*/
+	return body.getPosition().x;
 }
 
 float enemy::get_y_max() const {
 
+	/**		old stuff
 	//get the origin of the body (top left corner) and return the y part 
 	const sf::Vector2f origin = body.getOrigin();
 	return origin.y;
+	*/
+	auto t = body.getPosition().y;
+	return body.getPosition().y + square_length;	//getPosition() corresponds to the bottom left corner, so we add the square length
 }
 
 size_t enemy::getPointCount() const {	return body.getPointCount(); }
@@ -126,7 +138,7 @@ bool character::alive() const {
 
 bool character::hit_by(enemy& Enemy) {
 
-	if ((Enemy.get_y_max() <= get_y_min()) && (Enemy.get_x_min() >= get_x_max())) { // if the y or x values of enemy and character are intersecting  
+	if ((Enemy.get_y_max() >= get_y_min()) && (Enemy.get_x_min() <= get_x_max())) { // if the y or x values of enemy and character are intersecting  
 
 		hit_sound.play(); //play hit sound
 		lives--; // decrement lives
@@ -139,6 +151,7 @@ bool character::hit_by(enemy& Enemy) {
 
 }
 
+<<<<<<< HEAD
 void character::update_position() {
 
 	constexpr float square_length = 150 / 6;
@@ -161,54 +174,83 @@ void character::update_position() {
 
 
 
+=======
+>>>>>>> 49aafc770c14a3364ae23746e6463fc972e3368a
 void Game::do_removals()
 {
-	bool was_hit = _character->hit_by(*enemies.front());
-	//checks if the player is hit by the frontmost enemy or if the enemy is out of bounds
-	if (was_hit ||	enemies.front()->get_x_min() < (0 - square_length))	
+	if (!enemies.empty())
 	{
-		delete enemies.front();	//delete enemy and shift queue forwards
-		enemies.pop_back();
+		enemy* front = enemies.front();
+		bool hit_by;
+		if (front)
+		{
+			hit_by = _character->hit_by(*front);
+			//checks if the player is hit by the frontmost enemy or if the enemy is out of bounds
+			if (hit_by || front->get_x_min() < (0 - square_length))
+			{
+				delete enemies.front();	//delete enemy and shift queue forwards
+				enemies.pop_front();
+
+				if (!hit_by) { ++score; }//if the player was not hit by the enemy then increase the score by one
+			}
+		}
 	}
 
-	if (!was_hit) { ++score; }	//if the player was not hit by the enemy then increase the score by one
+
 }
 void Game::move_enemies()
 {
-	for (auto it : enemies)
+
+	for (auto it : enemies)		//move every enemy in the list 2 pixels to the left
 	{
-		it->update_position({it->getPosition().x -1, it->getPosition().y});	//move the enemy to the left
+		
+		it->update_position();	//move the enemy to the left
 	}
+	
+
+}
+void Game::move_character()
+{
+	//uncomment when update_position has been implemented
+	//_character->update_position();
 }
 void Game::make_enemies()
 {
-	sf::Time time = timer.getElapsedTime();	//we get the time
 
-	if (time.asSeconds() >= 1.5)	//if more than 1.5 seconds have elapsed, we generate a new enemy with probability 50%
+	if (timer.getElapsedTime().asSeconds() >= 1.5)	//if more than 1.5 seconds have elapsed, we generate a new enemy with probability 50%
 	{
 		int val = rand();
 		
 		//uncomment the next line will cause the game program to not compile as enemy is an abc
-		//if (val % 2 == 0) { enemies.push_back(new enemy); }	//note: enemy is pure virtual, we need to override some functions
+		if (val % 2 == 0) { enemies.push_back(new enemy); }	//note: enemy is pure virtual, we need to override some functions
 
 		timer.restart();	//restart the timer
 	}
+}
+
+void Game::step()
+{
+	move_character();
+	move_enemies();
+	do_removals();
+	make_enemies();
 }
 
 void Game::manage_events(sf::Event e)
 {
 	if (e.type == sf::Event::KeyPressed)
 	{
-		if (e.key.code == sf::Keyboard::Up)
+		if (e.key.code == sf::Keyboard::Up)	//here we try to implement jump
 		{
 			_character->jump();
 		}
 	}
 }
 
-Game::Game(): score(0)
+Game::Game(): score(0), timer()
 {
 	_character = new character;
+	
 }
 
 Game::~Game()
@@ -232,8 +274,7 @@ void Game::display(sf::RenderWindow& window) const
 
 	for (auto it : enemies)
 	{
-		//Uncomment the next line when enemy::display(sf::RenderWindow& window) const; is declared and defined
-		//it->display(window);
+		it->display(window);
 	}
 }
 
