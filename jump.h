@@ -34,7 +34,6 @@ public:
 
 	/**
 	simple function to update the position of the enemy to be called upon by Game
-	@param pos the new position of enemy
 	*/
 	void update_position();
 
@@ -58,17 +57,14 @@ public:
 
 	/**
 	function to return the coordinates of a given vertex
-	@param index specify the vertex number that you want the coordiantes of 
+	@param index specify the vertex number that you want the coordiantes of
 	@return coordinates of that index
 	*/
 	sf::Vector2f getPoint(size_t index) const;
 
-<<<<<<< HEAD
 	/**
 	function to display the enemy
 	*/
-=======
->>>>>>> 49aafc770c14a3364ae23746e6463fc972e3368a
 	void display(sf::RenderWindow& window) const;
 
 };
@@ -89,11 +85,13 @@ private:
 	sf::Clock last_jump; //clock to keep track of time since the last jump
 	sf::RectangleShape top; //square part of the character
 	sf::RectangleShape bottom; //rectangle part of the character
+	sf::SoundBuffer hit_buffer;
+	sf::SoundBuffer jump_buffer;
 	sf::Sound hit_sound; //sound to make when hit
 	sf::Sound jump_sound; //sound to make when jump
 	int lives; //number of lives that the character has
 
-	
+
 public:
 
 	/**
@@ -210,6 +208,12 @@ public:
 	@return The score of the game
 	*/
 	unsigned int get_score() const;
+
+	/**
+	function to check if the game is over
+	@return true if char has 0 lives left, false otherwise
+	*/
+	bool isOver() const;
 };
 
 #endif

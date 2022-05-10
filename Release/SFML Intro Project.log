@@ -1,12 +1,7 @@
 ﻿  jump.cpp
-C:\Users\patil\source\repos\SFML Intro Project\jump.h(78,33): warning C4305: 'initializing': truncation from 'double' to 'const float'
+C:\Users\patil\source\repos\SFML Intro Project\jump.h(82,33): warning C4305: 'initializing': truncation from 'double' to 'const float'
   main.cpp
-C:\Users\patil\source\repos\SFML Intro Project\jump.h(78,33): warning C4305: 'initializing': truncation from 'double' to 'const float'
-C:\Users\patil\source\repos\SFML Intro Project\main.cpp(11,55): warning C4244: 'argument': conversion from 'const float' to 'unsigned int', possible loss of data
-C:\Users\patil\source\repos\SFML Intro Project\main.cpp(11,40): warning C4244: 'argument': conversion from 'const float' to 'unsigned int', possible loss of data
-  Generating code
-  0 of 138 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
-    0 functions had inline decision re-evaluated but remain unchanged
-  Finished generating code
-  SFML Intro Project.vcxproj -> C:\Users\patil\source\repos\SFML Intro Project\Release\SFML Intro Project.exe
+C:\Users\patil\source\repos\SFML Intro Project\jump.h(82,33): warning C4305: 'initializing': truncation from 'double' to 'const float'
+C:\Users\patil\source\repos\SFML Intro Project\main.cpp(12,55): warning C4244: 'argument': conversion from 'const float' to 'unsigned int', possible loss of data
+C:\Users\patil\source\repos\SFML Intro Project\main.cpp(12,40): warning C4244: 'argument': conversion from 'const float' to 'unsigned int', possible loss of data
+LINK : fatal error LNK1181: cannot open input file '..\..\..\Desktop\University docs\Spring 2022\PIC 10C\SFML stuff\lib\flac.lib'

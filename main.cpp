@@ -3,6 +3,7 @@
 #include <Windows.h>
 #include "jump.h"
 #include <iostream>
+#include <string>
 
 //moved constexpr variables to header file
 
@@ -21,7 +22,7 @@ int main() {
 	instructions.setCharacterSize(20);
 
 	sf::Font font;
-	if (!font.loadFromFile("Resources/sansation.ttf")) { //if we couldn't open the font file, throw an error
+	if (!font.loadFromFile("sansation.ttf")) { //if we couldn't open the font file, throw an error
 		throw std::logic_error("Could not find font sansation.ttf");
 	}
 	//instructions.setPosition(0, 0);
@@ -29,9 +30,16 @@ int main() {
 	instructions.setFillColor(sf::Color::White);
 	instructions.setFont(font); //set the font 
 
+	//initialize the game text 
+	sf::Text score;
+	score.setCharacterSize(20);
+
+	//make the font and color for score
+	score.setFillColor(sf::Color::White);
+	score.setFont(font); //set the font 
+
 	bool start = false;	//this starts the game once a key is pressed
 	Game game;	//initialize the game object
-	enemy x;
 	while (window.isOpen()) {
 
 		sf::Event event; //initialize an event to track user inputs
@@ -47,28 +55,33 @@ int main() {
 				else
 				{
 					game.manage_events(event);
-					//game.step();
-					//game.display(window);
 
 				}
 			}
 		}
-		game.step();
-
 
 		window.clear(sf::Color::Black); //clear the window and fill the background with black
 		window.draw(ground);
-		
+
 		if (start)	//if the game has started then we display the game
 		{
-			game.display(window);
-			//game.step();
+			std::string text;
+			if (game.isOver()) {//if the game is over, state that and don't continue the game
+				text = "Score: " + std::to_string(game.get_score()) + " Game Over";
+			}
+			else {//otherwise, display score normally and continue game 
+				text = "Score: " + std::to_string(game.get_score());
+				game.step();
+
+			}
+			score.setString(text);
+			window.draw(score);
 		}
 		else { window.draw(instructions); }	//otherwise show instructions
-	
-		x.display(window);
+
+		game.display(window);
 		window.display();//finally, display the window
-	
+
 	}
 	return 0;
 

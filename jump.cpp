@@ -151,7 +151,6 @@ bool character::hit_by(enemy& Enemy) {
 
 }
 
-<<<<<<< HEAD
 void character::update_position() {
 
 	constexpr float square_length = 150 / 6;
@@ -168,14 +167,9 @@ void character::update_position() {
 	//translate the top and the bottom by the jump height 
 	top.move(0.f, jump_height);
 	bottom.move(0.f, jump_height); 
-
 }
 
 
-
-
-=======
->>>>>>> 49aafc770c14a3364ae23746e6463fc972e3368a
 void Game::do_removals()
 {
 	if (!enemies.empty())
@@ -211,8 +205,7 @@ void Game::move_enemies()
 }
 void Game::move_character()
 {
-	//uncomment when update_position has been implemented
-	//_character->update_position();
+	_character->update_position();
 }
 void Game::make_enemies()
 {
@@ -230,10 +223,10 @@ void Game::make_enemies()
 
 void Game::step()
 {
-	move_character();
-	move_enemies();
-	do_removals();
-	make_enemies();
+	move_character(); //move the characters
+	move_enemies(); //move enemies
+	do_removals(); //remove enemies if needed
+	make_enemies(); //make enemies 
 }
 
 void Game::manage_events(sf::Event e)
