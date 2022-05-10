@@ -63,6 +63,11 @@ public:
 	*/
 	sf::Vector2f getPoint(size_t index) const;
 
+	/**
+	function to display the enemy
+	*/
+	void display(sf::RenderWindow& window) const;
+
 };
 
 
@@ -85,7 +90,7 @@ private:
 	sf::Sound jump_sound; //sound to make when jump
 	int lives; //number of lives that the character has
 
-	void update_path();
+	
 public:
 
 	/**
@@ -128,6 +133,11 @@ public:
 	@return true if so, false if not
 	*/
 	bool hit_by(enemy& Enemy);
+
+	/**
+	function to be called by Game class to update the position of character if it jumped
+	*/
+	void update_position();
 
 
 };

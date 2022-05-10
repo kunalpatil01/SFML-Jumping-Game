@@ -76,20 +76,8 @@ character::character() : init_pos(0.f, float(150 - 150 / 6)), last_jump(), top()
 
 float character::get_y_min() const {
 
-	constexpr float square_length = 150 / 6;
-	float time = last_jump.getElapsedTime().asSeconds();
-	float jump_height;
-
-	if (time <= T1) { //if the time since the last jump is under 1 second, then the character is in motion so use the formula to find jump height
-		jump_height = (8 * (square_length)*time * (T1 - time)) / (T1 * T1);
-	}
-	else { //otherwise, the character is not in motion so jump height is 0 
-		jump_height = 0;
-	}
-
-	const sf::Vector2f origin = bottom.getOrigin();
-
-	return origin.y + square_length - jump_height; //return the origin of y plus square length, minus the jump height 
+	//getPoint(3) will return the coordiantes of the 4th vertex of bottom 
+	return bottom.getPoint(3).y; //return y component of the last vertex of the bottom part of the character (which is at the bottom of the character)
 
 
 }
@@ -148,6 +136,25 @@ bool character::hit_by(enemy& Enemy) {
 	else { //otherwise, return false
 		return false;
 	}
+
+}
+
+void character::update_position() {
+
+	constexpr float square_length = 150 / 6;
+	float time = last_jump.getElapsedTime().asSeconds();
+	float jump_height;
+
+	if (time <= T1) { //if the time since the last jump is under 1 second, then the character is in motion so use the formula to find jump height
+		jump_height = (8 * (square_length)*time * (T1 - time)) / (T1 * T1);
+	}
+	else { //otherwise, the character is not in motion so jump height is 0 
+		jump_height = 0;
+	}
+
+	//translate the top and the bottom by the jump height 
+	top.move(0.f, jump_height);
+	bottom.move(0.f, jump_height); 
 
 }
 
